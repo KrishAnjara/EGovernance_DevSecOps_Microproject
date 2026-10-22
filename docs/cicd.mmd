@@ -1,0 +1,16 @@
+flowchart LR
+  A[Git push] --> B[Checkout]
+  B --> C[Install deps]
+  C --> D[pytest + JUnit]
+  D --> E{RUN_SONAR?}
+  E -->|yes| F[SonarQube analysis]
+  E -->|no| G
+  F --> G[Trivy fs scan]
+  G --> H[Docker build]
+  H --> I[Trivy image scan]
+  I --> K{DEPLOY_HOST set?}
+  K -->|yes| L[Ship image over SSH and run on app EC2]
+  L --> M[Smoke test /healthz]
+  K -->|no| N[Skip deploy]
+  M --> O[Archive reports]
+  N --> O

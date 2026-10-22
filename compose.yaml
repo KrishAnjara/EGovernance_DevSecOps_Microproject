@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    image: egov-sdlc-sim:local
+    ports:
+      - "8000:8000"
+    environment:
+      STATUS_STEP_SECONDS: "${STATUS_STEP_SECONDS:-20}"
+    volumes:
+      - appdata:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+volumes:
+  appdata:

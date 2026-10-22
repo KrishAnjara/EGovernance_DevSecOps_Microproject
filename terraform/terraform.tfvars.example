@@ -1,0 +1,4 @@
+# Copy to terraform.tfvars (git-ignored) and fill in. No secrets belong here.
+key_name   = "<existing-ec2-key-pair-name>"
+admin_cidr = "<YOUR_PUBLIC_IP>/32"      # find it: https://checkip.amazonaws.com
+repo_url   = "https://github.com/<your-user>/<your-repo>.git"

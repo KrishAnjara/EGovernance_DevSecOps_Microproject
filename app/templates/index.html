@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SDLC Models for an E-Governance Portal | Academic Simulation</title>
+<meta name="description" content="Academic comparison of Waterfall, Incremental and Agile models using a simulated e-governance portal.">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner" role="note"><strong>Academic simulation.</strong> This site is a student DevSecOps microproject. It is not a real government service and is not affiliated with any government agency. Do not enter real personal data.</div>
+<header class="top">
+  <a class="brand" href="#home">SDLC Models Lab</a>
+  <nav aria-label="Sections">
+    <a href="#models">Models</a><a href="#compare">Compare</a><a href="#portal">Portal demo</a>
+    <a href="#admin">Admin</a><a href="#devsecops">DevSecOps</a><a href="#testing">Testing</a><a href="#refs">References</a>
+  </nav>
+</header>
+<main id="main">
+
+<section id="home" class="hero">
+  <h1>Waterfall, Incremental or Agile: which model should build a citizen services portal?</h1>
+  <p class="lead">A DevSecOps Lab microproject that compares three software development models by planning one hypothetical e-governance portal with each of them, then running it through a secured, automated delivery pipeline.</p>
+  <div class="chips">
+    <a class="chip wf" href="#waterfall">Waterfall</a>
+    <a class="chip inc" href="#incremental">Incremental</a>
+    <a class="chip ag" href="#agile">Agile</a>
+  </div>
+  <div class="grid two">
+    <article class="panel"><h2>Project at a glance</h2>
+      <p>Course: DevSecOps Lab (B.Tech). Student: <em>[Your name, roll no.]</em>. Guide: <em>[Faculty name]</em>.</p>
+      <p>Case study: a simulated portal where citizens apply for services and track an application. The same requirements are used to show how each model would plan, build, test and release it.</p></article>
+    <article class="panel sdg"><h2>SDG 9: Industry, Innovation and Infrastructure</h2>
+      <p>SDG 9 calls for resilient infrastructure and innovation. Choosing a suitable development model, and automating testing and security checks, helps public digital infrastructure be delivered reliably and improved safely.</p></article>
+  </div>
+</section>
+
+<section id="models">
+  <h2>The three models</h2>
+
+  <article id="waterfall" class="model wf">
+    <div><h3>Waterfall</h3>
+    <p>Work moves through fixed phases in order: requirements, design, implementation, testing, deployment. Each phase is completed and approved before the next begins.</p>
+    <p><strong>In the portal:</strong> all form fields, status rules and admin reports are specified and signed off first. The portal is built and tested as a whole and goes live once.</p></div>
+    <svg viewBox="0 0 520 230" role="img" aria-labelledby="wft"><title id="wft">Waterfall lifecycle: five phases descending in sequence</title>
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="arrowhead"/></marker></defs>
+      <rect class="node wf" x="10" y="10" width="150" height="34" rx="4"/><text x="85" y="32">Requirements</text>
+      <rect class="node wf" x="110" y="55" width="150" height="34" rx="4"/><text x="185" y="77">Design</text>
+      <rect class="node wf" x="210" y="100" width="150" height="34" rx="4"/><text x="285" y="122">Implementation</text>
+      <rect class="node wf" x="310" y="145" width="150" height="34" rx="4"/><text x="385" y="167">Testing</text>
+      <rect class="node wf" x="360" y="188" width="150" height="34" rx="4"/><text x="435" y="210">Deployment</text>
+      <path class="line" d="M85 44V50Q85 72 110 72" marker-end="url(#ar)"/><path class="line" d="M185 89V95Q185 117 210 117" marker-end="url(#ar)"/>
+      <path class="line" d="M285 134V140Q285 162 310 162" marker-end="url(#ar)"/><path class="line" d="M385 179V183Q385 205 360 205" marker-end="url(#ar)"/></svg>
+  </article>
+
+  <article id="incremental" class="model inc">
+    <div><h3>Incremental</h3>
+    <p>The system is divided into parts. Each increment goes through a mini plan, build and test cycle and is released, so the product grows in working slices.</p>
+    <p><strong>In the portal:</strong> increment 1 is application submission, increment 2 is status tracking, increment 3 is the admin dashboard. Each release is tested together with earlier ones.</p></div>
+    <svg viewBox="0 0 520 230" role="img" aria-labelledby="int"><title id="int">Incremental lifecycle: three increments each with plan, build, test, release</title>
+      <text class="lbl" x="10" y="20">Increment 1: Submission</text>
+      <rect class="node inc" x="10" y="28" width="110" height="30" rx="4"/><text x="65" y="48">Plan</text><rect class="node inc" x="125" y="28" width="110" height="30" rx="4"/><text x="180" y="48">Build</text><rect class="node inc" x="240" y="28" width="110" height="30" rx="4"/><text x="295" y="48">Test</text><rect class="node rel" x="355" y="28" width="110" height="30" rx="4"/><text x="410" y="48">Release v1</text>
+      <text class="lbl" x="10" y="90">Increment 2: Status tracking</text>
+      <rect class="node inc" x="125" y="98" width="110" height="30" rx="4"/><text x="180" y="118">Plan</text><rect class="node inc" x="240" y="98" width="110" height="30" rx="4"/><text x="295" y="118">Build</text><rect class="node inc" x="355" y="98" width="110" height="30" rx="4"/><text x="410" y="118">Test</text><rect class="node rel" x="470" y="98" width="46" height="30" rx="4"/><text x="493" y="118">v2</text>
+      <text class="lbl" x="10" y="160">Increment 3: Admin dashboard</text>
+      <rect class="node inc" x="240" y="168" width="80" height="30" rx="4"/><text x="280" y="188">Plan</text><rect class="node inc" x="325" y="168" width="80" height="30" rx="4"/><text x="365" y="188">Build</text><rect class="node inc" x="410" y="168" width="60" height="30" rx="4"/><text x="440" y="188">Test</text><rect class="node rel" x="475" y="168" width="41" height="30" rx="4"/><text x="495" y="188">v3</text>
+      <text class="lbl" x="10" y="222">Each release adds working functionality to the previous one.</text></svg>
+  </article>
+
+  <article id="agile" class="model ag">
+    <div><h3>Agile</h3>
+    <p>Short sprints deliver small, working changes. A prioritised backlog is refined continuously, and review and retrospective feed lessons into the next sprint.</p>
+    <p><strong>In the portal:</strong> citizens' and officers' feedback on the simulated form and tracker reorders the backlog each sprint, for example adding a clearer error message or a mobile layout fix.</p></div>
+    <svg viewBox="0 0 520 230" role="img" aria-labelledby="agt"><title id="agt">Agile lifecycle: backlog, sprint planning, sprint, review, retrospective, repeating</title>
+      <rect class="node ag" x="10" y="95" width="100" height="40" rx="20"/><text x="60" y="119">Backlog</text>
+      <rect class="node ag" x="150" y="20" width="120" height="40" rx="20"/><text x="210" y="44">Sprint planning</text>
+      <rect class="node ag" x="310" y="20" width="110" height="40" rx="20"/><text x="365" y="44">Sprint 1-4 wk</text>
+      <rect class="node ag" x="410" y="95" width="100" height="40" rx="20"/><text x="460" y="119">Review</text>
+      <rect class="node ag" x="310" y="170" width="110" height="40" rx="20"/><text x="365" y="194">Retrospective</text>
+      <rect class="node rel" x="150" y="170" width="120" height="40" rx="20"/><text x="210" y="194">Release increment</text>
+      <path class="line" d="M60 95Q60 40 150 40" marker-end="url(#ar)"/><path class="line" d="M270 40H310" marker-end="url(#ar)"/><path class="line" d="M420 40Q460 40 460 95" marker-end="url(#ar)"/>
+      <path class="line" d="M460 135Q460 190 420 190" marker-end="url(#ar)"/><path class="line" d="M310 190H270" marker-end="url(#ar)"/><path class="line" d="M150 190Q60 190 60 135" marker-end="url(#ar)"/>
+      <text class="lbl" x="205" y="120">repeat every sprint</text></svg>
+  </article>
+</section>
+
+<section id="compare">
+  <h2>Interactive comparison</h2>
+  <p>Select a model to highlight it, or type to filter the rows. Data is served by the app's <code>/api/models</code> endpoint.</p>
+  <div class="controls">
+    <div role="group" aria-label="Highlight model">
+      <button class="btn" data-hl="all" aria-pressed="true">All models</button>
+      <button class="btn wf" data-hl="waterfall" aria-pressed="false">Waterfall</button>
+      <button class="btn inc" data-hl="incremental" aria-pressed="false">Incremental</button>
+      <button class="btn ag" data-hl="agile" aria-pressed="false">Agile</button>
+    </div>
+    <label>Filter rows <input id="cmp-filter" type="search" placeholder="e.g. testing"></label>
+  </div>
+  <div class="scroll"><table id="cmp-table"><caption class="sr">Comparison of Waterfall, Incremental and Agile</caption>
+    <thead><tr><th scope="col">Dimension</th><th scope="col" class="wf">Waterfall</th><th scope="col" class="inc">Incremental</th><th scope="col" class="ag">Agile</th></tr></thead>
+    <tbody><tr><td colspan="4">Loading comparison... (requires JavaScript)</td></tr></tbody></table></div>
+  <p class="note">Conclusion for the case study: a hybrid is realistic. Fixed legal rules can follow a Waterfall-style approval, while delivery of services is incremental and citizen-facing improvements run in Agile sprints.</p>
+</section>
+
+<section id="portal">
+  <h2>Hypothetical e-governance portal demo</h2>
+  <p class="warn">Simulation only. Use a made-up nickname. The server rejects emails and long numbers. Status advances automatically over about a minute to imitate processing.</p>
+  <div class="grid two">
+    <form id="apply-form" class="panel" novalidate>
+      <h3>Apply for a service</h3>
+      <label for="svc">Service</label><select id="svc" name="service" required></select>
+      <label for="alias">Nickname (made up)</label><input id="alias" name="alias" maxlength="40" required autocomplete="off">
+      <label for="details">Details (optional, max 300 characters)</label><textarea id="details" name="details" maxlength="300" rows="3"></textarea>
+      <button class="btn primary" type="submit">Submit simulated application</button>
+      <p id="apply-msg" role="status" aria-live="polite"></p>
+    </form>
+    <form id="track-form" class="panel" novalidate>
+      <h3>Track an application</h3>
+      <label for="ref">Reference number</label><input id="ref" name="ref" placeholder="SIM-1A2B3C4D" autocomplete="off">
+      <button class="btn primary" type="submit">Check status</button>
+      <p id="track-msg" role="status" aria-live="polite"></p>
+      <ol id="track-steps" class="steps" hidden></ol>
+    </form>
+  </div>
+</section>
+
+<section id="admin">
+  <h2>Sample administrator dashboard</h2>
+  <p class="warn">All figures are synthetic, generated by a fixed random seed. They are not real cases.</p>
+  <div id="admin-kpis" class="kpis"></div>
+  <div class="grid two"><div class="panel"><h3>Applications by service</h3><div id="bar-service" class="bars"></div></div>
+  <div class="panel"><h3>Applications by status</h3><div id="bar-status" class="bars"></div></div></div>
+  <div class="panel"><h3>Applications by month</h3><div id="bar-month" class="bars"></div></div>
+</section>
+
+<section id="devsecops">
+  <h2>DevSecOps workflow and security</h2>
+  <ol class="flow">
+    <li><strong>Plan</strong> backlog in Jira or GitHub Projects</li>
+    <li><strong>Code</strong> Git branches and pull requests</li>
+    <li><strong>Build and test</strong> Jenkins runs automated tests</li>
+    <li><strong>Analyse</strong> SonarQube static analysis</li>
+    <li><strong>Scan</strong> Trivy on files, dependencies and image</li>
+    <li><strong>Package</strong> Docker image, non-root</li>
+    <li><strong>Deploy</strong> Jenkins ships the image to an AWS EC2 server built with Terraform</li>
+    <li><strong>Monitor</strong> health check and logs</li>
+  </ol>
+  <div class="grid two">
+    <article class="panel"><h3>Security controls in this project</h3><ul>
+      <li>Input validation and parameterised SQL queries.</li><li>Rejection of personal-data patterns.</li>
+      <li>Content-Security-Policy, nosniff and frame protections.</li><li>No secrets in the repository; placeholders in <code>.env.example</code>.</li>
+      <li>Container runs as a non-root user.</li><li>Pinned dependencies scanned by Trivy.</li></ul></article>
+    <article class="panel"><h3>Scan status</h3><p>Actual scan results are not embedded in this website. Run the scripts in <code>scripts/</code> and record real findings in <code>docs/vulnerability_report_template.md</code>. Until then every scan is <strong>pending</strong>.</p></article>
+  </div>
+</section>
+
+<section id="testing">
+  <h2>Testing, scope and limitations</h2>
+  <div class="grid three">
+    <article class="panel"><h3>Testing</h3><p>Automated API and validation tests in <code>tests/</code> cover the pages, security headers, form validation, status tracking and synthetic data. Run them with the commands in the README.</p></article>
+    <article class="panel"><h3>Scope</h3><p>Comparison of three SDLC models, a simulated citizen form and tracker, a synthetic admin view, and a reproducible CI/CD and cloud configuration.</p></article>
+    <article class="panel"><h3>Limitations</h3><ul><li>No authentication, so the admin view is a demo only.</li><li>Status progression is time-based, not workflow-based.</li><li>Comparison is qualitative, not measured on a real team.</li><li>No rate limiting or HTTPS in the default setup.</li></ul></article>
+  </div>
+  <h3>Future enhancements</h3>
+  <ul><li>Role-based login with hashed passwords and audit logs.</li><li>HTTPS via a load balancer or reverse proxy.</li><li>Quantitative model comparison using simulated sprint data.</li><li>DAST scanning (for example OWASP ZAP) in the pipeline.</li><li>Multi-language support for citizens.</li></ul>
+</section>
+
+<section id="refs">
+  <h2>References</h2>
+  <p class="note">Verify details and add the citation style required by your institution before submitting.</p>
+  <ul class="refs">
+    <li>Royce, W. W. (1970). Managing the development of large software systems. <em>Proceedings of IEEE WESCON</em>, 328-338.</li>
+    <li>Beck, K. et al. (2001). Manifesto for Agile Software Development. agilemanifesto.org.</li>
+    <li>Larman, C. and Basili, V. R. (2003). Iterative and incremental development: a brief history. <em>IEEE Computer</em>, 36(6), 47-56.</li>
+    <li>Sommerville, I. (2016). <em>Software Engineering</em> (10th ed.). Pearson.</li>
+    <li>Pressman, R. S. and Maxim, B. R. (2019). <em>Software Engineering: A Practitioner's Approach</em> (9th ed.). McGraw-Hill.</li>
+    <li>United Nations. Sustainable Development Goal 9. sdgs.un.org/goals/goal9.</li>
+    <li>OWASP Foundation. OWASP Top 10. owasp.org/www-project-top-ten.</li>
+    <li>NIST (2022). SP 800-218, Secure Software Development Framework (SSDF) Version 1.1.</li>
+  </ul>
+</section>
+</main>
+<footer><p>Academic simulation for DevSecOps Lab. Student: [Name] | Roll no.: [Roll] | Institution: [College] | Year: [Year]</p></footer>
+</body>
+</html>

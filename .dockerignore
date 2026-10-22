@@ -1,0 +1,16 @@
+.git
+.github
+__pycache__
+*.pyc
+.venv
+venv
+.env
+data
+reports
+terraform
+docs
+tests
+Jenkinsfile
+*.zip
+jenkins
+Makefile

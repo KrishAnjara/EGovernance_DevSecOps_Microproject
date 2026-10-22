@@ -1,0 +1,20 @@
+flowchart LR
+  Dev[Developer] -->|git push| GH[GitHub]
+  Dev -->|terraform apply| AWS
+  subgraph AWS[AWS default VPC]
+    subgraph J[EC2 jenkins-server t3.medium]
+      JK[Jenkins container]
+      SQ[SonarQube container]
+      TR[Trivy and sonar-scanner in Jenkins image]
+    end
+    subgraph A[EC2 app-server t3.micro]
+      APP[egov web app container :80]
+      DB[(SQLite volume)]
+    end
+  end
+  GH -->|clone| JK
+  JK --> SQ
+  JK -->|docker save, ssh, docker load| APP
+  APP --- DB
+  Citizen[Browser] -->|HTTP 80| APP
+  Dev -->|8080, 9000, 22 from admin IP only| J
